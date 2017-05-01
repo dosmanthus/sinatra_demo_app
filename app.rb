@@ -1,5 +1,9 @@
-require 'sinatra'
+require 'sinatra/base'
 
-get '/index' do
-  File.read("views/index.html")
+module MyModule
+  class MyApplication < Sinatra::Base
+    get '/index' do
+      File.read("views/index.html")
+    end
+  end
 end
